@@ -1,0 +1,54 @@
+version: '3'
+services:
+
+    nginx:
+        image: scarwu/demo-nginx:1.14
+        volumes:
+            - ./config/Nginx:/volume/config
+            - ./data/web:/volume/data
+            - ./log/nginx:/volume/log
+        ports:
+            - "80:80"
+        external_links:
+            - "php56:PHP-5.6"
+            - "php70:PHP-7.0"
+            - "php71:PHP-7.1"
+            - "php72:PHP-7.2"
+        depends_on:
+            - "php56"
+            - "php70"
+            - "php71"
+            - "php72"
+        restart: always
+
+    php56:
+        image: scarwu/demo-php:5.6
+        volumes:
+            - ./config/PHP-5.6:/volume/config
+            - ./data/web:/volume/data
+            - ./log/php56:/volume/log
+        restart: always
+
+    php70:
+        image: scarwu/demo-php:7.0
+        volumes:
+            - ./config/PHP-7.0:/volume/config
+            - ./data/web:/volume/data
+            - ./log/php70:/volume/log
+        restart: always
+
+    php71:
+        image: scarwu/demo-php:7.1
+        volumes:
+            - ./config/PHP-7.1:/volume/config
+            - ./data/web:/volume/data
+            - ./log/php71:/volume/log
+        restart: always
+
+    php72:
+        image: scarwu/demo-php:7.2
+        volumes:
+            - ./config/PHP-7.2:/volume/config
+            - ./data/web:/volume/data
+            - ./log/php72:/volume/log
+        restart: always
