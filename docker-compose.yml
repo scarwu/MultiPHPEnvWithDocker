@@ -5,7 +5,7 @@ services:
         image: scarwu/demo-nginx:1.14
         volumes:
             - ./config/Nginx:/volume/config
-            - ./data/web:/volume/data
+            - ./data:/volume/data
             - ./log/nginx:/volume/log
         ports:
             - "80:80"
@@ -25,7 +25,7 @@ services:
         image: scarwu/demo-php:5.6
         volumes:
             - ./config/PHP-5.6:/volume/config
-            - ./data/web:/volume/data
+            - ./data:/volume/data
             - ./log/php56:/volume/log
         restart: always
 
@@ -33,7 +33,7 @@ services:
         image: scarwu/demo-php:7.0
         volumes:
             - ./config/PHP-7.0:/volume/config
-            - ./data/web:/volume/data
+            - ./data:/volume/data
             - ./log/php70:/volume/log
         restart: always
 
@@ -41,7 +41,7 @@ services:
         image: scarwu/demo-php:7.1
         volumes:
             - ./config/PHP-7.1:/volume/config
-            - ./data/web:/volume/data
+            - ./data:/volume/data
             - ./log/php71:/volume/log
         restart: always
 
@@ -49,6 +49,6 @@ services:
         image: scarwu/demo-php:7.2
         volumes:
             - ./config/PHP-7.2:/volume/config
-            - ./data/web:/volume/data
+            - ./data:/volume/data
             - ./log/php72:/volume/log
         restart: always
