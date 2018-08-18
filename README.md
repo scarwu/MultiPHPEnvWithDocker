@@ -3,7 +3,7 @@
 ## Build Docker Images
 
 ~~~
-./build/run-all.sh build
+./docker/images.sh build
 ~~~
 
 ## Services
@@ -16,7 +16,7 @@ docker-compose up -d
 docker-compose down --remove-orphans
 ~~~
 
-## Try Multi-version PHP
+## Try Multi-PHP Envs
 
 Open your browser with following links.
 

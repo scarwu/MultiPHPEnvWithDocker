@@ -6,7 +6,7 @@ function build {
     for CONTAINER in `find "." -maxdepth 1`
     do
         if [ $CONTAINER != "." ] && [ -d $CONTAINER ]; then
-            ./$CONTAINER/run.sh build
+            ./$CONTAINER/image.sh build
         fi
     done
 }
@@ -15,7 +15,7 @@ function push {
     for CONTAINER in `find "." -maxdepth 1`
     do
         if [ $CONTAINER != "." ] && [ -d $CONTAINER ]; then
-            ./$CONTAINER/run.sh push
+            ./$CONTAINER/image.sh push
         fi
     done
 }
