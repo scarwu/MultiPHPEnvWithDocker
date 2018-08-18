@@ -1,4 +1,4 @@
-# Multi-version PHP Environments with Docker
+# Multi-PHP Environments with Docker
 
 ## Build Docker Images
 
